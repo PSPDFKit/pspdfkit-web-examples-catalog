@@ -1,0 +1,14 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="4.25" cy="17.5" r="0.75" transform="rotate(90 4.25 17.5)" fill="black"/>
+<path d="M4 17.5L20 17.5" stroke="black" stroke-linecap="round" stroke-dasharray="0.01 1.99"/>
+<circle cx="19.75" cy="17.5" r="0.75" transform="rotate(90 19.75 17.5)" fill="black"/>
+<circle cx="4.25" cy="13.5" r="0.75" transform="rotate(90 4.25 13.5)" fill="black"/>
+<path d="M4 13.5L20 13.5" stroke="black" stroke-dasharray="2 2"/>
+<circle cx="19.75" cy="13.5" r="0.75" transform="rotate(90 19.75 13.5)" fill="black"/>
+<circle cx="4.25" cy="9.5" r="0.75" transform="rotate(90 4.25 9.5)" fill="black"/>
+<path d="M4 9.5L20 9.5" stroke="black" stroke-dasharray="6 2"/>
+<circle cx="19.75" cy="9.5" r="0.75" transform="rotate(90 19.75 9.5)" fill="black"/>
+<circle cx="4.24665" cy="5.49999" r="0.750358" transform="rotate(90 4.24665 5.49999)" fill="black"/>
+<path d="M4 5.5L20 5.5" stroke="black"/>
+<circle cx="19.7514" cy="5.50001" r="0.74855" transform="rotate(90 19.7514 5.50001)" fill="black"/>
+</svg>
