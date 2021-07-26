@@ -1,0 +1,58 @@
+.PSPDFKit-Annotation-Widget-Signature-Badge {
+  display: none;
+}
+.signHereLeft,
+.signHereRight {
+  font-family: Open Sans, Helvetica, sans-serif;
+  font-size: 0.25rem;
+  color: #ffffff;
+  position: absolute;
+  padding: 0 0.125rem;
+  height: 100%;
+}
+.signHereLeft img,
+.signHereRight img {
+  height: 100%;
+  display: block;
+}
+
+.signHereLeft {
+  left: 100%;
+}
+.signHereRight {
+  right: 100%;
+}
+.signatureIcon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.signatureIcon div {
+  height: 70%;
+  margin-left: 30%;
+}
+.signatureIcon img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+.filledField {
+  border: solid 1px green;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.emptyField {
+  border: solid 1px red;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
