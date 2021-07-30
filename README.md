@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- A PSPDFKit for Web license. If you don't already have one you can [request a free trial here](https://pspdfkit.com/try/).
+- A PSPDFKit for Web license. If you don't already have one you can simply ignore the steps for setting a license or activation key to start PSPDFKit in trial mode.
 
 Before you get started, make sure to check out this repository locally:
 
