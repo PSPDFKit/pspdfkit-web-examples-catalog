@@ -13,7 +13,7 @@
     "jsonwebtoken": "^8.4.0",
     "mime-types": "^2.1.26",
     "multer": "^1.4.1",
-    "next": "9.0.5",
+    "next": "11.1.0",
     "qrcode.react": "^0.8.0",
     "random-bytes": "^1.0.0",
     "react": "^16.13.1",
