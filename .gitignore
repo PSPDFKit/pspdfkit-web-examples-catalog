@@ -1,0 +1,8 @@
+node_modules
+.next
+_server/pages/*
+!_server/pages/custom.js
+!_server/pages/upload.js
+!_server/pages/_*
+_server/examples.js
+examples/dev-*
