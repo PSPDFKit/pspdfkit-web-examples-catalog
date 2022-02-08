@@ -1,0 +1,113 @@
+version: "3"
+services:
+  # PSPDFKit Server requires a PostgreSQL database. We use the postgres docker
+  # container to set this up.
+  db:
+    image: postgres:12.5
+    environment:
+      POSTGRES_USER: pspdfkit
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: pspdfkit
+      POSTGRES_INITDB_ARGS: --data-checksums
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # Next, we download and start an instance of PSPDFKit Server.
+  # https://pspdfkit.com/guides/server/current/pspdfkit-server/overview/
+  pspdfkit:
+    image: "${PSPDFKIT_IMAGE:-pspdfkit/pspdfkit:latest}"
+
+    environment:
+      PGUSER: pspdfkit
+      PGPASSWORD: password
+      PGDATABASE: pspdfkit
+      PGHOST: db
+      PGPORT: 5432
+
+      # Activation key for your PSPDFKit Server installation
+      ACTIVATION_KEY: ${ACTIVATION_KEY}
+
+      # Secret token used for authenticating API requests.
+      API_AUTH_TOKEN: secret
+
+      # Base key used for deriving secret keys for the purposes of authentication.
+      SECRET_KEY_BASE: secret-key-base
+
+      # Public key used for verification of JWTs from web clients. It has to be in the PEM format.
+      JWT_PUBLIC_KEY: |
+        -----BEGIN PUBLIC KEY-----
+        MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALd41vG5rMzG26hhVxE65kzWC+bYQ94t
+        OxsSxIQZMOc1GY8ubuqu2iku5/5isaFfG44e+VAe+YIdVeQY7cUkaaUCAwEAAQ==
+        -----END PUBLIC KEY-----
+      JWT_ALGORITHM: RS256
+
+      # Credentials to access the admin dashboard
+      DASHBOARD_USERNAME: dashboard
+      DASHBOARD_PASSWORD: secret
+
+      # Asset storage backend that is used by PSPDFKit Server
+      ASSET_STORAGE_BACKEND: built-in
+
+      # A microservice used for completing the signing of the PDF data.
+      # This service can be found at https://github.com/PSPDFKit/pspdfkit-web-signing-service-example
+      SIGNING_SERVICE_URL: http://signing_service:6000/sign
+
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+
+  # Now we can start our Examples Catalog. It uses the Dockerfile
+  # provided in this repository to set up the necessary environment.
+  example:
+    build: .
+    depends_on:
+      - pspdfkit
+      - signing_service
+    ports:
+      - "3000:3000"
+
+    environment:
+      # The internal URL is used by the Examples Catalog server to connect to
+      # the PSPDFKit Server. By default, we want it to talk to the PSPDFKit
+      # server declared in this docker-compose.yml file.
+      PSPDFKIT_SERVER_INTERNAL_URL: http://pspdfkit:5000
+
+      # The external URL is used by the browser to connect to PSPDFKit Server.
+      # By default, it uses the same host as the browser is currently serving
+      # and adds port 5000 (the default PSPDFKit Server port).
+      #
+      # In some situations, this URL needs to be manually overwritten. This is
+      # usually the case when you want to deploy the Examples Catalog to
+      # production and have a different hostname for the PSPDFKit Server.
+      # PSPDFKIT_SERVER_EXTERNAL_URL: https://my-pspdfkit-server.example.com/
+
+      # To protect the /upload endpoint you can set those two variables
+      # which will be used to protect you that users can upload anything
+      # if they don't have the username/password combination.
+      # UPLOAD_AUTH_USERNAME: username
+      # UPLOAD_AUTH_PASSWORD: password
+
+      PSPDFKIT_STANDALONE_LICENSE_KEY: |
+        YOUR_LICENSE_KEY_GOES_HERE
+
+      JWT_PRIVATE_KEY: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIBPAIBAAJBALd41vG5rMzG26hhVxE65kzWC+bYQ94tOxsSxIQZMOc1GY8ubuqu
+        2iku5/5isaFfG44e+VAe+YIdVeQY7cUkaaUCAwEAAQJAHfi9lEtysRkjNQSBxqzK
+        hm7JDvLxU1AsQaX1OGctF/fLXzkWiMLsBZ3yLHdPSvl/izbKyGrADv7wrQJrPPhg
+        gQIhAPQrw5Uh7pQ4RMvkDJff7aHWwWTUuqgsiS/r1/7KHl8VAiEAwFxH2YA3MR/5
+        Rl5/VJJp6Cv/2IGSgQVCSDZyL5rcBFECIQDc3eGTOxhmtud0T5scnpCD/pD9tngJ
+        vA90a6/8Z7RFaQIhAIBOjVZUoXvQ+fKoIYKFzsKgZp1BgDkzCs0kE/IQ92ShAiEA
+        7f4XIbGgIFaSJRpBfa168aeP162EV5oOW+Gyv2IIyK8=
+        -----END RSA PRIVATE KEY-----
+  signing_service:
+    build: https://github.com/PSPDFKit/pspdfkit-web-signing-service-example.git
+    environment:
+      SIGNING_SERVICE_PORT: 6000
+
+# We configure the volumes that our services have access to. In the case
+# of our Examples Catalog, all we need is the pgdata volume.
+volumes:
+  ? pgdata
