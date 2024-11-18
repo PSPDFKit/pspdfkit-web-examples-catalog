@@ -1,0 +1,100 @@
+/*
+ * We need to make sure that the outline border is visible, even on top of
+ * reveal annotations.
+ */
+.PSPDFKit-Selection-Outline-Back {
+  z-index: 1000;
+}
+
+.Revealed-Area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.Revealed-Area-Top,
+.Revealed-Area-Bottom,
+.Revealed-Area-Left,
+.Revealed-Area-Right,
+.Revealed-Area-TopLeft,
+.Revealed-Area-TopRight,
+.Revealed-Area-BottomLeft,
+.Revealed-Area-BottomRight {
+  position: absolute;
+  background-color: black;
+  top: -10000%;
+  left: -10000%;
+  right: -10000%;
+  bottom: -10000%;
+}
+
+[data-is-dragging-or-resizing] .Revealed-Area {
+  opacity: 0.8;
+}
+
+.Revealed-Area-Top {
+  bottom: 100%;
+
+  /*
+  We use -1px instead of 0 because at least on Chrome, 0 causes small gaps
+  between the reveal area sides. A 1px offset ensures that all of the other
+  content is covered.
+  */
+
+  left: -1px;
+  right: -1px;
+}
+
+.Revealed-Area-Bottom {
+  top: 100%;
+  left: -1px;
+  right: -1px;
+}
+
+.Revealed-Area-Left {
+  right: 100%;
+  top: -1px;
+  bottom: -1px;
+}
+
+.Revealed-Area-Right {
+  left: 100%;
+  top: -1px;
+  bottom: -1px;
+}
+
+.Revealed-Area-TopLeft {
+  bottom: 100%;
+  right: 100%;
+}
+
+.Revealed-Area-TopRight {
+  bottom: 100%;
+  left: 100%;
+}
+
+.Revealed-Area-BottomLeft {
+  right: 100%;
+  top: 100%;
+}
+
+.Revealed-Area-BottomRight {
+  left: 100%;
+  top: 100%;
+}
+
+.Revealed-Area-Center {
+  /*
+  This is needed to set cursor: pointer even when the annotation is not selected
+  */
+
+  position: absolute;
+  background: transparent;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}

@@ -1,0 +1,334 @@
+/* Toolbar button styles */
+
+.PSPDFKit-Input-Dropdown-Item {
+  display: flex;
+}
+
+.PSPDFKit-Input-Dropdown-Item button.customSidebarButton::after,
+.PSPDFKit-Input-Dropdown-Item
+  button.PSPDFKit-Toolbar-Button-Sidebar-Thumbnails::after {
+  content: "\00a0— Custom";
+  white-space: nowrap;
+  align-self: center;
+  font-style: italic;
+  color: #848c9a;
+}
+
+.PSPDFKit-Input-Dropdown-Item.PSPDFKit-Input-Dropdown-Item-selected
+  button.customSidebarButton::after,
+.PSPDFKit-Input-Dropdown-Item.PSPDFKit-Input-Dropdown-Item-selected
+  button.PSPDFKit-Toolbar-Button-Sidebar-Thumbnails::after {
+  color: #bec9d9;
+}
+
+/* Custom Sidebar Styles */
+
+.PSPDFKit-Sidebar-Custom > div {
+  height: 100%;
+}
+
+.PSPDFKit-Sidebar-Custom {
+  background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .PSPDFKit-Sidebar-Custom {
+    background-color: rgb(43, 46, 54);
+  }
+}
+
+.customSidebarHeader {
+  display: flex;
+  background-color: #ffffff;
+  padding: 0.609em 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .customSidebarHeader {
+    background-color: #2b2e36;
+  }
+}
+
+.customSidebarHeader h2 {
+  color: #000000;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0.609em 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .customSidebarHeader h2 {
+    color: #fff;
+  }
+}
+
+.customSidebarPageHeader {
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.8125em 1.625em;
+  margin: 0;
+  background: #f0f3f9;
+  background: var(--color-coolGrey50);
+  color: #4d525d;
+  color: var(--PSPDFKit-TextInput--default-color);
+  text-align: right;
+}
+
+@media (prefers-color-scheme: dark) {
+  .customSidebarPageHeader {
+    background: #3d424e;
+    color: #d8dfeb;
+  }
+}
+
+.customSidebarResult {
+  color: #000;
+  list-style-type: none;
+  padding: 0.8125em 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .customSidebarResult {
+    color: #fff;
+  }
+}
+
+.customSidebarResult + .customSidebarResult {
+  border-top: 1px solid #848c9a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .customSidebarResult + .customSidebarResult {
+    border-top-color: #848c9a;
+  }
+}
+
+/* Customized Annotations Sidebar Styles */
+
+.PSPDFKit-Sidebar-Annotations .PSPDFKit-Sidebar-Header {
+  flex-direction: column;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .PSPDFKit-Sidebar-Annotations .PSPDFKit-Sidebar-Header {
+    background-color: #2b2e36;
+  }
+}
+
+.annotationFiltersHeader {
+  font-weight: bold;
+  color: black;
+  padding: 18px 1rem;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .annotationFiltersHeader {
+    color: white;
+  }
+}
+
+.filtersContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 1em 0.3125em;
+  flex-wrap: wrap;
+  font-weight: normal;
+}
+
+/* .annotationTypeFilter */
+
+.annotationTypeFilter,
+.showAllButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0.75rem;
+  border-radius: 0.8rem;
+  height: 1.6rem;
+  margin: 0 0.25rem 0.5rem 0;
+  cursor: pointer;
+}
+
+.showAllButton {
+  color: #4636e3;
+  background: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  .showAllButton {
+    color: #a8bbf8;
+  }
+}
+
+.filtersToggleButton {
+  cursor: pointer;
+  height: 24px;
+  overflow: hidden;
+}
+
+.annotationTypeFilter input,
+.filtersToggleButton input {
+  position: absolute;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transform: translate(-100%, -100%);
+}
+
+.annotationTypeFilter label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.annotationTypeFilterOn {
+  background-color: #4636e3;
+  color: #eff0ef;
+}
+
+.annotationTypeFilterOff {
+  background-color: #eff0ef;
+  color: #50545c;
+}
+
+@media (prefers-color-scheme: dark) {
+  .annotationTypeFilterOff {
+    background-color: #eff0ef;
+    background-color: var(--color-coolGrey800);
+    color: #50545c;
+    color: var(--color-coolGrey100);
+  }
+}
+
+.annotationTypeFilterCheckmarkContainer {
+  transition: width 0.2s ease-in-out;
+}
+
+.annotationTypeFilterOn .annotationTypeFilterCheckmarkContainer {
+  width: calc(10px + 0.5rem);
+}
+
+.annotationTypeFilterOff .annotationTypeFilterCheckmarkContainer {
+  width: 0;
+}
+
+.filtersToggleButtonContainer {
+  width: 24px;
+  height: 24px;
+  -webkit-mask: url("/customized-sidebars/static/filter.svg") no-repeat center;
+  mask: url("/customized-sidebars/static/filter.svg") no-repeat center;
+}
+
+.PSPDFKit-browser-engine-trident .filtersToggleButtonContainer {
+  background-image: url("/customized-sidebars/static/filter.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.filtersToggleButton {
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.filtersToggleButton.filtersVisible {
+  background-color: #4636e3;
+}
+
+.PSPDFKit-browser-engine-trident .filtersToggleButton.filtersVisible {
+  background-color: transparent;
+}
+
+.filtersToggleButton.filtersVisible .filtersToggleButtonContainer {
+  background-color: #eff0ef;
+}
+
+.filtersToggleButton.filtersHidden {
+  background-color: transparent;
+}
+
+.filtersToggleButton.filtersHidden:hover {
+  background-color: #d8dfeb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .filtersToggleButton.filtersHidden:hover {
+    background-color: #090c12;
+  }
+}
+
+.filtersToggleButton.filtersHidden .filtersToggleButtonContainer,
+.filtersToggleButton.filtersOffHidden .filtersToggleButtonContainer {
+  border-radius: 5px;
+}
+
+.filtersToggleButton.filtersHidden .filtersToggleButtonContainer {
+  background-color: #50545c;
+}
+
+.PSPDFKit-browser-engine-trident
+  .filtersToggleButton.filtersHidden
+  .filtersToggleButtonContainer {
+  background-color: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  .filtersToggleButton.filtersHidden .filtersToggleButtonContainer {
+    background-color: #ffffff;
+  }
+}
+
+.filtersToggleButton.filtersOffHidden {
+  background-color: transparent;
+}
+
+.filtersToggleButton.filtersOffHidden:hover {
+  background-color: #d8dfeb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .filtersToggleButton.filtersOffHidden:hover {
+    background-color: #090c12;
+  }
+}
+
+.filtersToggleButton.filtersOffHidden .filtersToggleButtonContainer {
+  background-color: #4636e3;
+}
+
+@media (prefers-color-scheme: dark) {
+  .filtersToggleButton.filtersOffHidden .filtersToggleButtonContainer {
+    background-color: #a8bbf8;
+  }
+}
+
+.PSPDFKit-Sidebar-Annotations .PSPDFKit-Sidebar-Item {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #d8dfeb;
+  border-bottom-color: var(--color-coolGrey100);
+}
+
+.PSPDFKit-Sidebar-Annotations .PSPDFKit-Sidebar-Item:last-child {
+  border-bottom: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .PSPDFKit-Sidebar-Annotations .PSPDFKit-Sidebar-Item {
+    border-bottom-color: #848c9a;
+    border-bottom-color: var(--color-coolGrey400);
+  }
+}
