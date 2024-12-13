@@ -1,0 +1,15 @@
+.finish-signing {
+  border: 1px solid #5e5ceb;
+}
+
+.finish-signing.PSPDFKit-Toolbar-Button-disabled {
+  border: 1px solid #4d525d;
+}
+
+.finish-signing:not(.PSPDFKit-Toolbar-Button-disabled) {
+  background-color: #4636e3;
+}
+
+.finish-signing:hover {
+  background-color: #5e5ceb;
+}
