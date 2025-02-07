@@ -1,0 +1,49 @@
+{
+  "name": "catalog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^22.10.0",
+    "buffer": "^6.0.3",
+    "classnames": "^2.5.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-winston": "^4.2.0",
+    "jquery": "^3.7.1",
+    "jsonwebtoken": "^9.0.2",
+    "marked": "^15.0.4",
+    "mime-types": "^2.1.35",
+    "multer": "^1.4.5-lts.1",
+    "next": "14",
+    "qrcode.react": "^4.1.0",
+    "random-bytes": "^1.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-modal": "^3.16.1",
+    "react-select": "^5.8.3",
+    "styled-jsx": "^5.1.6",
+    "uuid": "^11.0.3",
+    "winston": "^3.17.0"
+  },
+  "scripts": {
+    "clean": "rm -rf _server/.next _server/examples.js && find _server/pages/ -type f ! -name \"404.js\" ! -name \"_app.js\" ! -name \"_document.js\" ! -name \"custom.js\" ! -name \"upload.js\"  -delete",
+    "predev": "NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" node _server/scripts/generate-pages.js",
+    "dev": "NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" node _server/server.js",
+    "prebuild": "yarn run clean && NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" node _server/scripts/generate-pages.js",
+    "build": "cd _server && NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" next build && cd ..",
+    "start": "NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" yarn run build && NODE_ENV=production NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" node _server/server.js"
+  },
+  "browserslist": [
+    "Firefox ESR",
+    "last 2 Chrome versions",
+    "last 2 firefox versions",
+    "last 2 edge versions",
+    "safari >= 15.4",
+    "ios_saf >= 15.4",
+    "last 2 and_chr versions"
+  ],
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  }
+}

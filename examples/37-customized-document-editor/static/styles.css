@@ -1,0 +1,18 @@
+.add-page {
+  background-color: #D4FCAC;
+}
+
+.remove-page, .cancel {
+  background-color: #FFD4CE;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .add-page {
+    background-color: #345805;
+  }
+  
+  .remove-page, .cancel {
+    background-color: #8A2100;
+  }
+}
