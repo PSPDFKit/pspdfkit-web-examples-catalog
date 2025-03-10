@@ -1,0 +1,59 @@
+.dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.PSPDFKit-Sidebar-Custom {
+  color: var(--PSPDFKit-AnnotationsSidebar--empty-color);
+}
+
+.PSPDFKit-Sidebar-Custom h2 {
+  background: var(--PSPDFKit-Sidebar-header-background);
+  color: var(--PSPDFKit-AnnotationsSidebar--empty-color);
+  margin: 0;
+  padding: var(--PSPDFKit-spacing-5) var(--PSPDFKit-spacing-3);
+}
+
+.signaturesInfo__body {
+  padding: var(--PSPDFKit-spacing-4);
+  color: var(--PSPDFKit-AnnotationsSidebar--empty-color);
+}
+
+.signaturesInfo__common {
+  padding-bottom: 1rem
+}
+
+.signaturesInfo strong {
+  color: var(--PSPDFKit-DocumentOutline-icon-isHovered-color);
+}
+
+summary {
+  font-style: italic;
+  cursor: pointer;
+}
+
+dd {
+  margin-inline-start: 1rem;
+}
+
+.signaturesInfo__summary--valid {
+  color: #00b300;
+}
+
+.signaturesInfo__summary--error {
+  color: #ff0000;
+}
+
+.signaturesInfo__summary--warning {
+  color: #ffcc00;
+}
