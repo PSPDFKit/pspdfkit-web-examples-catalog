@@ -1,0 +1,235 @@
+<div class="signingForm__header">
+  <h2>Sign the document</h2>
+</div>
+<form name="signingForm" class="signingForm__form">
+  <div class="signingForm__body">
+    <p>
+      Please fill the information below and press "Sign" to add a new visible
+      signature to the document.
+    </p>
+    <fieldset class="signingForm__metadata">
+      <legend>Metadata</legend>
+      <div class="signingForm__field">
+        <label for="showSigner"
+          >Show signer
+          <input type="checkbox" id="showSigner" name="showSigner" checked
+        /></label>
+        <input
+          type="text"
+          id="signer"
+          name="signer"
+          value="John Doe"
+          placeholder="Signer"
+        />
+      </div>
+      <div class="signingForm__field">
+        <label for="showReason"
+          >Show reason
+          <input type="checkbox" id="showReason" name="showReason" checked
+        /></label>
+        <input
+          type="text"
+          id="reason"
+          name="reason"
+          value="Signing"
+          placeholder="Reason"
+        />
+      </div>
+      <div class="signingForm__field">
+        <label for="showLocation"
+          >Show location
+          <input type="checkbox" id="showLocation" name="showLocation" checked
+        /></label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          value="Earth"
+          placeholder="Location"
+        />
+      </div>
+      <div class="signingForm__field">
+        <label for="showSignDate"
+          >Show date
+          <input type="checkbox" id="showSignDate" name="showSignDate" checked
+        /></label>
+      </div>
+      <div class="signingForm__field">
+        <label for="showDateTimezone"
+          >Show timezone
+          <input type="checkbox" id="showDateTimezone" name="showDateTimezone"
+        /></label>
+      </div>
+    </fieldset>
+    <fieldset class="signingForm__graphic">
+      <legend>Signature Image</legend>
+      <div class="signingForm__field">
+        <input type="file" id="graphic" name="graphic" />
+      </div>
+    </fieldset>
+    <fieldset class="signingForm__watermark">
+      <legend>Watermark</legend>
+      <div class="signingForm__field">
+        <input type="file" id="watermark" name="watermark" />
+      </div>
+      <label for="showWatermark"
+        >Show watermark
+        <input type="checkbox" id="showWatermark" name="showWatermark" checked
+      /></label>
+    </fieldset>
+    <fieldset class="signingForm__formField">
+      <legend>Form field</legend>
+      <div class="signingForm__field">
+        <label for="positionNewFormField"
+          >Use new form field
+          <input
+            type="radio"
+            id="positionNewFormField"
+            name="signatureFormField"
+            value="positionNewFormField"
+            checked
+        /></label>
+        <div class="signingForm__position">
+          <label for="positionX"
+            >Left <input type="number" id="positionX" name="left" value="350"
+          /></label>
+          <label for="positionY"
+            >Top <input type="number" id="positionY" name="top" value="100"
+          /></label>
+          <label for="width"
+            >Width <input type="number" id="width" name="width" value="250"
+          /></label>
+          <label for="height"
+            >Height <input type="number" id="height" name="height" value="150"
+          /></label>
+        </div>
+      </div>
+      <div class="signingForm__field">
+        <label for="useExistingFormField"
+          >Use existing form field
+          <input
+            type="radio"
+            id="useExistingFormField"
+            name="signatureFormField"
+            value="useExistingFormField"
+        /></label>
+        <select id="formFieldName" name="formFieldName" disabled></select>
+      </div>
+    </fieldset>
+    <fieldset class="signingForm__formField">
+      <legend>Mode</legend>
+      <div class="signingForm__field">
+        <label for="signatureOnly"
+          >Signature only
+          <input
+            type="radio"
+            id="signatureOnly"
+            name="mode"
+            value="signatureOnly"
+        /></label>
+      </div>
+      <div class="signingForm__field">
+        <label for="signatureAndDescription"
+          >Signature and description
+          <input
+            type="radio"
+            id="signatureAndDescription"
+            name="mode"
+            value="signatureAndDescription"
+            checked
+        /></label>
+      </div>
+      <div class="signingForm__field">
+        <label for="descriptionOnly"
+          >Description only
+          <input
+            type="radio"
+            id="descriptionOnly"
+            value="descriptionOnly"
+            name="mode"
+        /></label>
+      </div>
+    </fieldset>
+    <fieldset class="signingForm__formField">
+      <legend>Type</legend>
+      <div class="signingForm__field">
+        <label for="CAdES"
+          >CAdES
+          <input
+            type="radio"
+            id="CAdES"
+            name="signatureType"
+            value="CAdES"
+            checked
+        /></label>
+      </div>
+      <div class="signingForm__field">
+        <label for="CMS"
+          >CMS <input type="radio" id="CMS" name="signatureType" value="CMS"
+        /></label>
+      </div>
+      <div class="signingForm__field" id="providePrivateKey_label">
+        <label for="providePrivateKey"
+          >Provide private key
+          <input
+            type="checkbox"
+            id="providePrivateKey"
+            name="providePrivateKey"
+            checked
+        /></label>
+      </div>
+    </fieldset>
+    <fieldset class="signingForm__formField">
+      <legend>Timestamp</legend>
+      <div class="signingForm__field" id="addTimestamp_label">
+        <label for="addTimestamp"
+        >Add a timestamp
+          <input
+            type="checkbox"
+            id="addTimestamp"
+            name="addTimestamp"
+            checked
+          /></label>
+        <label for="timestampUrl"><input
+          type="text"
+          id="timestampUrl"
+          name="timestampUrl"
+          value="https://rfc3161.ai.moda"
+          placeholder="TSA URL"
+        /></label>
+        <label for="timestampUsername"><input
+          type="text"
+          id="timestampUsername"
+          name="timestampUsername"
+          value=""
+          placeholder="Username"
+        /></label>
+        <label for="timestampPassword"><input
+          type="text"
+          id="timestampPassword"
+          name="timestampPassword"
+          value=""
+          placeholder="Password"
+        /></label>
+      </div>
+    </fieldset>
+    <fieldset class="signingForm__formField">
+      <legend>Long Term Validation</legend>
+      <div class="signingForm__field" id="enableLTV_label">
+        <label for="enableLTV"
+        >Enable LTV
+          <input
+            type="checkbox"
+            id="enableLTV"
+            name="enableLTV"
+            checked
+          /></label>
+      </div>
+      <button class="signingForm__button" id="refreshLTV" disabled type="button">Refresh LTV</button>
+    </fieldset>
+    <div class="signingForm__footer">
+      <button class="signingForm__button" id="sign">Sign</button>
+      <button class="signingForm__button" id="resetForm">Reset</button>
+    </div>
+  </div>
+</form>

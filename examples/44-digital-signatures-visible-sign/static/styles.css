@@ -1,0 +1,100 @@
+.dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.PSPDFKit-Sidebar-Custom {
+  color: var(--PSPDFKit-AnnotationsSidebar--empty-color);
+}
+
+.PSPDFKit-Sidebar-Custom h2 {
+  background: var(--PSPDFKit-Sidebar-header-background);
+  color: var(--PSPDFKit-AnnotationsSidebar--empty-color);
+  margin: 0;
+  padding: var(--PSPDFKit-spacing-5) var(--PSPDFKit-spacing-3);
+}
+
+.signingForm fieldset {
+  padding: revert;
+}
+
+.signingForm__body {
+  padding: var(--PSPDFKit-spacing-4);
+  color: var(--PSPDFKit-AnnotationsSidebar--empty-color);
+}
+
+.signingForm__field input[type="file"] {
+  width: 100%;
+}
+
+.signingForm__field input[type="text"] {
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+
+.signingForm .signingForm__metadata label {
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.signingForm .signingForm__formField .signingForm__field {
+  width: 100%;
+}
+
+.signingForm .signingForm__formField .signingForm__field select {
+  width: inherit;
+}
+
+.signingForm .signingForm__formField label {
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.signingForm input[type="checkbox"],
+.signingForm input[type="radio"] {
+  vertical-align: middle;
+}
+
+.signingForm .signingForm__position label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  word-break: initial;
+}
+
+.signingForm .signingForm__position label input {
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  max-width: 4rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.signingForm__field select {
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+
+.signingForm fieldset {
+  margin: 0.5rem 0;
+}
+
+.signingForm__footer button {
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
