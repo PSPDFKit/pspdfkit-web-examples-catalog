@@ -1,0 +1,40 @@
+.annotation-id {
+  padding: 10px;
+}
+
+*::-ms-backdrop,
+.annotation-id {
+  color: #000000;
+}
+
+.PSPDFKit-Rotation {
+  display: flex;
+  flex-direction: row;
+  height: 44px;
+  padding: 8px 20px 6px 10px;
+  border-left: 1px solid #eeeeee1f;
+  align-items: center;
+  color: #d8dedb;
+}
+
+*::-ms-backdrop,
+.PSPDFKit-Rotation {
+  color: #000000;
+}
+
+.PSPDFKit-Rotation svg {
+  margin-right: 15px;
+  display: flex;
+}
+
+.PSPDFKit-Rotation select {
+  height: 100%;
+  background-color: #000000;
+  color: white;
+}
+
+*::-ms-backdrop,
+.PSPDFKit-Rotation select {
+  background-color: #fff;
+  color: #000000;
+}

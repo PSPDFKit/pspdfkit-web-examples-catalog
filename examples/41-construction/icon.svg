@@ -1,0 +1,33 @@
+<svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="white" />
+  <rect x="26.9019" y="15" width="4.47059" height="70.0392" fill="#C3CFD6" />
+  <rect x="68.6274" y="15" width="4.47059" height="70.0392" fill="#C3CFD6" />
+  <rect x="12" y="49.2745" width="76" height="17.8824" rx="2" fill="#951939" />
+  <rect x="12" y="20.9608" width="76" height="17.8824" rx="2" fill="#951939" />
+  <mask id="mask0_5069_345" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="12" y="20" width="76" height="19">
+    <rect x="12.75" y="21.7108" width="74.5" height="16.3824" rx="1.25" fill="white" stroke="#EB7F00" stroke-width="1.5" />
+  </mask>
+  <g mask="url(#mask0_5069_345)">
+    <line x1="27.4323" y1="15.5303" x2="-0.881416" y2="43.8441" stroke="white" stroke-width="1.5" />
+    <line x1="69.1578" y1="15.5303" x2="40.844" y2="43.8441" stroke="white" stroke-width="1.5" />
+    <line x1="48.295" y1="15.5303" x2="19.9813" y2="43.8441" stroke="white" stroke-width="1.5" />
+    <line x1="90.0206" y1="15.5303" x2="61.7068" y2="43.8441" stroke="white" stroke-width="1.5" />
+    <line x1="37.8637" y1="15.5303" x2="9.54995" y2="43.8441" stroke="white" stroke-width="1.5" />
+    <line x1="79.5892" y1="15.5303" x2="51.2754" y2="43.8441" stroke="white" stroke-width="1.5" />
+    <line x1="58.7264" y1="15.5303" x2="30.4127" y2="43.8441" stroke="white" stroke-width="1.5" />
+    <line x1="100.452" y1="15.5303" x2="72.1382" y2="43.8441" stroke="white" stroke-width="1.5" />
+  </g>
+  <mask id="mask1_5069_345" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="12" y="49" width="76" height="19">
+    <rect x="12.75" y="50.0245" width="74.5" height="16.3824" rx="1.25" fill="white" stroke="#EB7F00" stroke-width="1.5" />
+  </mask>
+  <g mask="url(#mask1_5069_345)">
+    <line x1="27.4323" y1="43.8441" x2="-0.881416" y2="72.1578" stroke="white" stroke-width="1.5" />
+    <line x1="69.1578" y1="43.8441" x2="40.844" y2="72.1578" stroke="white" stroke-width="1.5" />
+    <line x1="48.295" y1="43.8441" x2="19.9813" y2="72.1578" stroke="white" stroke-width="1.5" />
+    <line x1="90.0206" y1="43.8441" x2="61.7068" y2="72.1578" stroke="white" stroke-width="1.5" />
+    <line x1="37.8637" y1="43.8441" x2="9.54995" y2="72.1578" stroke="white" stroke-width="1.5" />
+    <line x1="79.5892" y1="43.8441" x2="51.2754" y2="72.1578" stroke="white" stroke-width="1.5" />
+    <line x1="58.7264" y1="43.8441" x2="30.4127" y2="72.1578" stroke="white" stroke-width="1.5" />
+    <line x1="100.452" y1="43.8441" x2="72.1382" y2="72.1578" stroke="white" stroke-width="1.5" />
+  </g>
+</svg>

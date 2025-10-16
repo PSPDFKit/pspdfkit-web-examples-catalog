@@ -1,0 +1,53 @@
+{
+  "name": "catalog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "classnames": "^2.5.1",
+    "dotenv": "^17.2.1",
+    "express": "^4.21.2",
+    "express-winston": "^4.2.0",
+    "jquery": "^3.7.1",
+    "jsonwebtoken": "^9.0.2",
+    "marked": "^15.0.12",
+    "mime-types": "^3.0.1",
+    "multer": "^2.0.2",
+    "next": "^15.5.2",
+    "qrcode.react": "^4.2.0",
+    "random-bytes": "^1.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-modal": "^3.16.3",
+    "react-select": "^5.10.1",
+    "styled-jsx": "^5.1.7",
+    "uuid": "^11.1.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.7",
+    "@types/react-dom": "^19.1.6"
+  },
+  "scripts": {
+    "clean": "rm -rf _server/.next _server/examples.js && find _server/pages/ -type f ! -name \"404.js\" ! -name \"_app.js\" ! -name \"_document.js\" ! -name \"custom.js\" ! -name \"upload.js\"  -delete",
+    "predev": "NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" node _server/scripts/generate-pages.js",
+    "dev": "NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" node _server/server.js",
+    "prebuild": "yarn run clean && NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" node _server/scripts/generate-pages.js",
+    "build": "cd _server && NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" NODE_ENV=production next build && cd ..",
+    "start": "NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" yarn run build && NODE_ENV=production NODE_OPTIONS=\"--unhandled-rejections=warn --openssl-legacy-provider\" node _server/server.js"
+  },
+  "browserslist": [
+    "Firefox ESR",
+    "last 2 Chrome versions",
+    "last 2 firefox versions",
+    "last 2 edge versions",
+    "safari >= 15.4",
+    "ios_saf >= 15.4",
+    "last 2 and_chr versions"
+  ],
+  "optionalDependencies": {
+    "fsevents": "^2.3.3"
+  }
+}
