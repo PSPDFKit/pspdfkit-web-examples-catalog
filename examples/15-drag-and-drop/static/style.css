@@ -1,0 +1,17 @@
+.PSPDFKit-Sidebar {
+  background-color: rgb(250, 251, 251);
+  box-shadow: -5px 0 5px rgba(200, 200, 200, 0.2);
+}
+
+.PSPDFKit-Annotation-Tooltip {
+  flex-direction: column;
+}
+
+.PSPDFKit-Annotation-Tooltip .PSPDFKit-Annotation-Tool-Button {
+  padding: 5px 20px;
+  border: none;
+}
+
+.PSPDFKit-Sidebar-Dragger {
+  display: none;
+}

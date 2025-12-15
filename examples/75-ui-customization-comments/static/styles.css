@@ -1,0 +1,46 @@
+.comment-thread-container {
+  padding: 8px 16px;
+  background: whitesmoke;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.total-comments {
+  font-size: 0.75rem;
+}
+
+.comment-container {
+  padding: 4px 8px;
+}
+
+.comment-creator {
+  color: rebeccapurple;
+  font-size: 0.8rem;
+}
+
+.comment-date {
+  font-size: 0.7rem;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+
+.comment-content {
+  margin-bottom: 4px;
+}
+
+.comment-button {
+  padding: 8px 12px;
+  background-color: rebeccapurple;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+}

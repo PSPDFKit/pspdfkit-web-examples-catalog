@@ -1,0 +1,1 @@
+export { flattenAnnotationsHandler } from "./flattenAnnotationsHandler";
