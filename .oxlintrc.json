@@ -1,0 +1,19 @@
+{
+  "$schema": "../../node_modules/oxlint/configuration_schema.json",
+  "plugins": ["nextjs", "react", "typescript"],
+  "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "no-import-assign": "off",
+    "no-unassigned-vars": "off",
+    "no-unused-expressions": "off",
+    "no-useless-rename": "off",
+    "nextjs/next-script-for-ga": "off",
+    "nextjs/no-img-element": "off",
+    "nextjs/no-sync-scripts": "off",
+    "react/jsx-key": "off",
+    "react/no-children-prop": "off",
+    "react/no-did-mount-set-state": "off",
+    "react-hooks/exhaustive-deps": "off"
+  }
+}

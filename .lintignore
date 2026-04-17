@@ -1,0 +1,23 @@
+node_modules
+pspdfkit-lib
+nutrient-viewer-lib
+release-builds
+dist
+vendor
+.next
+build
+Scripts
+Content
+static
+
+# Ignore automatically generated/gitignored files
+
+_server/examples.js
+
+# Everything in the pages directory except...
+
+_server/pages/*
+!_server/pages/_app.js
+!_server/pages/_document.js
+!_server/pages/_upload.js
+!_server/pages/_custom.js
